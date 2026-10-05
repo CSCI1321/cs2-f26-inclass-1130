@@ -12,7 +12,6 @@ public class Blackjack {
     // Constructor
     public Hand() {
       hand = new ArrayList<Card>();
-      // hand = Deck.emptyDeck();
     }
 
     // Methods
