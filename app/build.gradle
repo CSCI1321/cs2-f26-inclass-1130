@@ -50,3 +50,8 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+//Required to get user input form keyboard
+run {
+    standardInput = System.in
+}
