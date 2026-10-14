@@ -1,5 +1,6 @@
 package cs2.graphics;
 
+import cs2.util.Vec2;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -20,16 +21,24 @@ public class Animation extends Application {
     GraphicsContext g = canvas.getGraphicsContext2D();
 
     AnimationTimer timer = new AnimationTimer() {
-      double x = 100;
-      double y = 150;
+      // double x = 100;
+      // double dx = 3;
+      // double y = 150;
+      // double dy = 1;
+      Vec2 pos = new Vec2(100,150);
+      Vec2 vel = Vec2.randVec2();
+      
       public void handle(long t) {
         g.setFill(Color.WHITE);
         g.fillRect(0,0,600,600);
         g.setFill(Color.ORANGERED);
-        g.fillOval(x,y, 100,100);
-        x+=3;
-        if(x >= 600-100) {
-          x-=3;
+        g.fillOval(pos.x,pos.y, 100,100);
+        pos.addThis(vel);
+        if(pos.x >= 600-100 || pos.x <= 0) {
+          vel.x = -vel.x;
+        }
+        if(pos.y >= 600-100 || pos.y <= 0) {
+          vel.y = -vel.y;
         }
       }
     };
