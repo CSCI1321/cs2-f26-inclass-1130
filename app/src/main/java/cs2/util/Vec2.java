@@ -6,7 +6,7 @@ public class Vec2 {
   public Vec2(double ix, double iy) { x=ix; y=iy; }
   public Vec2() { x=0; y=0; }
   public static Vec2 randVec2() {
-    return new Vec2(Math.random()*6-3,Math.random()*6-3);
+    return new Vec2(Math.random()*2-1,Math.random()*2-1);
   }
   public String toString() { return "("+x+","+y+")"; }
   public Vec2 add(Vec2 other) {
@@ -15,5 +15,8 @@ public class Vec2 {
   public void addThis(Vec2 other) {
     this.x += other.x;
     this.y += other.y;
+  }
+  public Vec2 clone() {
+    return new Vec2(this.x, this.y);
   }
 }
