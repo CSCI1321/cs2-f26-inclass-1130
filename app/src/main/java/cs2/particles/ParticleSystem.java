@@ -14,7 +14,8 @@ public class ParticleSystem {
     origin = o;
   }
   public void addParticle() {
-    parts.add(new Particle(origin.clone(), Vec2.randVec2()));
+    parts.add(new RoundParticle(origin.clone(), Vec2.randVec2()));
+    parts.add(new SquareParticle(origin.clone(), Vec2.randVec2()));
   }
   public void display(GraphicsContext g) {
     for(int i=0; i<parts.size(); i++) {
