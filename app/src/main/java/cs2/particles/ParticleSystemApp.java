@@ -36,9 +36,11 @@ public class ParticleSystemApp extends Application {
       ps.add(new ParticleSystem(new Vec2(e.getX(),e.getY())));
     });
     
+    ColorPattern background = new RainbowColor();//new SolidColor(Color.CHARTREUSE);
+
     AnimationTimer timer = new AnimationTimer() {
       public void handle(long t) {
-        g.setFill(Color.WHITE);
+        g.setFill(background.getColor());
         g.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
         for(ParticleSystem s : ps) {
           s.update();

@@ -7,12 +7,12 @@ import javafx.scene.paint.Color;
 public class SquareParticle extends Particle {
   public SquareParticle(Vec2 p, Vec2 v) {
     super(p,v);
-    col = Color.BLUEVIOLET;
+    cp = new SolidColor(Color.BLUEVIOLET);
   }
 
   @Override 
   public void display(GraphicsContext g) {
-    g.setFill(col);
+    g.setFill(cp.getColor());
     g.fillRect(pos.x, pos.y, 20,20);
   }
 }

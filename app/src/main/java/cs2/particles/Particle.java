@@ -7,10 +7,12 @@ import javafx.scene.paint.Color;
 public abstract class Particle {
   protected Vec2 pos;
   protected Vec2 vel;
-  protected Color col = Color.ORANGERED;
+  //protected Color col = Color.ORANGERED;
+  protected ColorPattern cp;
   
   public Particle(Vec2 p, Vec2 v) {
     pos = p; vel = v;
+    cp = new SolidColor(Color.RED);
   }
   public abstract void display(GraphicsContext g);
 
