@@ -35,7 +35,7 @@ public class QueueTester {
      */
     @BeforeEach
     void init() {
-        //q = new LinkedQueue<Integer>();
+        q = new ArrayQueue<Integer>();
     }
 
     // -----------------------------------------------------------------------
