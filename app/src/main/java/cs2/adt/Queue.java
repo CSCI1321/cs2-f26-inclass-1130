@@ -1,8 +1,10 @@
 package cs2.adt;
 
-public interface Queue<T> {
+import java.util.NoSuchElementException;
+
+public interface Queue<T>{
   public void enqueue(T item);
-  public T dequeue();
-  public T peek();
+  public T dequeue() throws NoSuchElementException;
+  public T peek() throws NoSuchElementException;
   public boolean isEmpty();
 }

@@ -17,11 +17,13 @@ public class LinkedStack<T> implements Stack<T> {
     head = new Node(elem, head);
   }
   public T pop() throws EmptyStackException {
+    if(isEmpty()) throw new EmptyStackException();
     T retVal = head.data;
     head = head.next;
     return retVal;
   }
   public T peek() throws EmptyStackException {
+    if(isEmpty()) throw new EmptyStackException();
     return head.data;
   }
   public boolean isEmpty() { return head == null; }
